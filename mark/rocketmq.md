@@ -1,7 +1,7 @@
 # RocketMq
-## 架构
+## 1 架构
 
-## 编译安装
+## 2 编译安装
 * git
 > git@github.com:apache/rocketmq.git
 * 导入工程之后，maven goal
@@ -48,4 +48,16 @@ nohup sh bin/mqbroker -n 192.168.28.83:9876 -c conf/broker.conf &
 > 查看日志，有
 ```shell
 The broker[broker-a, 192.168.28.83:10911] boot success. serializeType=JSON and name server is 192.168.28.83:9876
+```
+## 3 管理客户端
+* git
+```shell
+git@github.com:apache/rocketmq-externals.git
+```
+* 编译运行访问
+```shell
+mvn clean package -Dmaven.test.skip=true
+java -jar target/rocketmq-console-ng-2.0.0.jar
+or mvn spring-boot:run
+http://{ip}:{port}/
 ```
